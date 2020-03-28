@@ -1,0 +1,643 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\rightmargin 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment 1 CS
+\end_layout
+
+\begin_layout Author
+Barak Gorodissky 208845495, Dan Lurye 316143171
+\end_layout
+
+\begin_layout Subparagraph*
+We, Barak Gorodissky 208845495, Dan Lurye 316143171, assert that the work
+ we submitted is entirely my own.
+ We have not received any part from any other student in the class, nor
+ did We give parts of it for use to others.
+ We realize that if our work is found to contain code that is not originally
+ my own, a formal case will be opened against me with the BGU disciplinary
+ committee.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f_{4}\leq f_{1}\leq f_{13}\leq f_{9}\leq f_{11}\leq f_{14}\leq f_{10}\leq f_{2}\leq f_{12}\leq f_{3}\leq f_{5}\leq f_{7}\leq f_{8}\leq f_{6}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $f_{4}\in O\left\{ f_{1}\right\} :$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+for 
+\begin_inset Formula $n_{0}=1,c=1$
+\end_inset
+
+ we get that for every 
+\begin_inset Formula $n>n_{0}:$
+\end_inset
+
+ 
+\begin_inset Formula $\frac{1}{\sqrt{n}}<2020\cdot1$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $f_{1}\in\theta\left\{ f_{13}\right\} :$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+for 
+\begin_inset Formula $n_{0}=1,c_{1}=\frac{1}{2^{100}},c_{2}=1$
+\end_inset
+
+ we get that for every 
+\begin_inset Formula $n>n_{0}:$
+\end_inset
+
+ 
+\begin_inset Formula $\frac{1}{2^{100}}\cdot2^{100}=1\leq2020\leq2^{100}\cdot1$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $f_{13}\in O\left\{ f_{9}\right\} :$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $n_{0}=1,c=\frac{5}{2}\cdot2^{100}$
+\end_inset
+
+ notice that 
+\begin_inset Formula $n>1,n\in\mathbb{N}\Rightarrow\log\text{(n)}>1$
+\end_inset
+
+ hence we get that that for every 
+\begin_inset Formula $n>n_{0}:$
+\end_inset
+
+ 
+\begin_inset Formula $2^{100}\leq2^{100}\log\left(n\right)=2^{100}\cdot\frac{5}{2}\cdot\frac{2}{5}\log\left(n\right)=2^{100}\cdot\frac{5}{2}\cdot\log\left(n^{\frac{2}{5}}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $f_{9}\in\theta\left\{ f_{11}\right\} :$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+note that 
+\begin_inset Formula $\log\left(n^{\frac{2}{5}}\right)=\frac{2}{5}\log\left(n\right)$
+\end_inset
+
+; 
+\begin_inset Formula $\log\left(n^{5}\right)=5\log\left(n\right).$
+\end_inset
+
+ So for 
+\begin_inset Formula $c_{1}=\frac{1}{25},c_{2}=\frac{1}{5},n_{0}=1$
+\end_inset
+
+ we get that for every 
+\begin_inset Formula $n>n_{0}:\frac{1}{25}\cdot5\log(n)=\frac{1}{5}\log(n)\leq\frac{2}{5}\log(n)\leq\log(n)=\frac{1}{5}\cdot5\log(n)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $f_{11}\in O\{f_{14}\}:$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+for 
+\begin_inset Formula $c=\frac{15}{4},n_{0}=1$
+\end_inset
+
+ we get that for every 
+\begin_inset Formula $n>n_{0}:$
+\end_inset
+
+ 
+\begin_inset Formula $5\log(n)\leq\frac{15}{4}\cdot\frac{4n}{3}=5n$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\left(\Rightarrow\right)$
+\end_inset
+
+ let's assume that 
+\begin_inset Formula $f\left(n\right)\in O\left(g\left(n\right)\right)\land f\left(n\right)\in\Omega\left(g\left(n\right)\right)\Rightarrow$
+\end_inset
+
+ there exists 
+\begin_inset Formula $n_{0_{1}},n_{0_{2}},c_{1},c_{2}$
+\end_inset
+
+ such that for every 
+\begin_inset Formula $n>n_{0_{1}}:$
+\end_inset
+
+ 
+\begin_inset Formula $f\left(n\right)\leq c_{1}\cdot g\left(n\right)$
+\end_inset
+
+ and for every 
+\begin_inset Formula $n>n_{0_{2}}$
+\end_inset
+
+ 
+\begin_inset Formula $f\left(n\right)\geq c_{2}\cdot g\left(n\right)$
+\end_inset
+
+, hence if we choose 
+\begin_inset Formula $n_{0}=max\left\{ n_{0_{1}},n_{0_{2}}\right\} $
+\end_inset
+
+,
+\begin_inset Formula $c_{1}=c_{1},c_{2}=c_{2}$
+\end_inset
+
+ we get that for every 
+\begin_inset Formula $n>n_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $c_{2}\cdot g\left(n\right)\leq f\left(n\right)\leq c_{1}\cdot g\left(n\right)\Rightarrow f\left(n\right)\in\theta\left\{ g\left(n\right)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(\Leftarrow\right)$
+\end_inset
+
+ let's assume that 
+\begin_inset Formula $f\left(n\right)\in\theta\left\{ g\left(n\right)\right\} \Rightarrow$
+\end_inset
+
+ there exists 
+\begin_inset Formula $n_{0},c_{1},c_{2}$
+\end_inset
+
+ such that for every 
+\begin_inset Formula $n>n_{0}:$
+\end_inset
+
+ 
+\begin_inset Formula $c_{2}\cdot g\left(n\right)\leq f\left(n\right)\leq c_{1}\cdot g\left(n\right)\Rightarrow$
+\end_inset
+
+ for every 
+\begin_inset Formula $n>n_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $f\left(n\right)\geq c_{2}\cdot g\left(n\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $f\left(n\right)\leq c_{1}\cdot g\left(n\right)$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow f\left(n\right)\in O\left(g\left(n\right)\right)\land f\left(n\right)\in\Omega\left(g\left(n\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+(1) index ← -1 
+\end_layout
+
+\begin_layout Standard
+(2) for i = 1 to A.length-1 do: 
+\end_layout
+
+\begin_layout Standard
+(3)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ if A[i] == key : 
+\end_layout
+
+\begin_layout Standard
+(4)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ index ← i 
+\end_layout
+
+\begin_layout Standard
+(5)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ break 
+\end_layout
+
+\begin_layout Standard
+(6) return index 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Line (1) costs 
+\begin_inset Formula $\theta\left(1\right)$
+\end_inset
+
+.
+ line (2) has two operations hence its cost is 
+\begin_inset Formula $\theta\left(1\right)+\theta\left(1\right)=\theta\left(1\right)$
+\end_inset
+
+.
+ line (3) costs 
+\begin_inset Formula $\theta\left(1\right)$
+\end_inset
+
+.
+ line (4) costs 
+\begin_inset Formula $\theta\left(1\right)$
+\end_inset
+
+.
+ line (5) costs 
+\begin_inset Formula $\theta\left(1\right)$
+\end_inset
+
+.
+ line (6) 
+\begin_inset Formula $\theta\left(1\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In the worst case 'key' isn't in the array hence the for loop will be executed
+ until 
+\begin_inset Formula $i=A.length-1$
+\end_inset
+
+ ,namely 
+\begin_inset Formula $n-1$
+\end_inset
+
+ times which means that line (3) will also be executed 
+\begin_inset Formula $n-1$
+\end_inset
+
+ times.
+ 
+\end_layout
+
+\begin_layout Standard
+Line (1),(6) will be executed once, line (4) won't be excepted because 'key'
+ isn't in the array.
+ So the total cost in the worst cast will be 
+\begin_inset Formula $\left(n-1\right)+\left(n-1\right)+1+1=2n$
+\end_inset
+
+ which is 
+\begin_inset Formula $\theta\left(n\right).$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $T\left(n\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $T\left(n\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $T\left(n\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $T\left(n\right)=2T\left(\frac{n}{2}\right)+n$
+\end_inset
+
+ this recurrence satisfies master method case 2 we have 
+\begin_inset Formula $a=2,b=2,f\left(n\right)=n$
+\end_inset
+
+ 
+\begin_inset Formula $\log_{b}a=\log_{2}2=1$
+\end_inset
+
+ and 
+\begin_inset Formula $f\left(n\right)=n\in\theta\left(n^{\log_{2}2}\right)=\theta\left(n\right)$
+\end_inset
+
+ hence 
+\begin_inset Formula $T(n)\in\Theta\left(f\left(n\right)\log n\right)=\Theta\left(n\log n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $T\left(n\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $T\left(n\right)=2T\left(n-1\right)+1$
+\end_inset
+
+ we will prove using induction that 
+\begin_inset Formula $T\left(n\right)=2^{n}-1$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+base: 
+\begin_inset Formula $n=1\Rightarrow T\left(1\right)=1=2^{1}-1=2^{n}-1$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+step: we assume the statement is true for some 
+\begin_inset Formula $n$
+\end_inset
+
+ we will prove for 
+\begin_inset Formula $n+1$
+\end_inset
+
+.
+ using the induction hypothesis we get - 
+\begin_inset Formula $T\left(n+1\right)=2T\left(n\right)+1=2\left(2^{n}-1\right)+1=2^{n+1}-1$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+and indeed we get that the statement is true for 
+\begin_inset Formula $n+1$
+\end_inset
+
+, hence true for all 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Now we will prove that 
+\begin_inset Formula $2^{n}-1\in\theta\left(2^{n}\right):$
+\end_inset
+
+ if we choose 
+\begin_inset Formula $c_{1}=\frac{1}{2},c_{2}=1,n_{0}=1$
+\end_inset
+
+ we get that for every 
+\begin_inset Formula $n>n_{0}$
+\end_inset
+
+ 
+\begin_inset Formula $\frac{1}{2}\left(2^{n}\right)=2^{n-1}\leq2^{n}-1\leq1\cdot2^{n}=2^{n}\Rightarrow$
+\end_inset
+
+ we conclude 
+\begin_inset Formula $2^{n}-1\in\theta\left(2^{n}\right)\Rightarrow T\left(n\right)\in\theta\left(2^{n}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $ $
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_body
+\end_document
