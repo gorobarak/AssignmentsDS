@@ -334,53 +334,19 @@ For
 \begin_deeper
 \begin_layout Standard
 Note that 
-\begin_inset Formula $n^{3}+n^{2}+n+\log\left(n\right)\leq4n^{3}$
+\begin_inset Formula $n^{3}+n^{2}+n+\log\left(n\right)\leq4n^{3}.$
 \end_inset
 
-, we will substitute 
-\begin_inset Formula $m=\log\left(n\right)\Rightarrow n=2^{m}$
+ We will substitute 
+\begin_inset Formula $\sqrt{n}=t\Rightarrow4n^{3}=4n^{6};2^{\sqrt{n}}=2^{t}.$
 \end_inset
 
-.
- So 
-\begin_inset Formula $4n^{3}=4\left(2^{m}\right)^{3}=2^{2}\cdot2^{3m}=2^{3m+2}$
+ Let's define 
+\begin_inset Formula $a_{t}=\frac{4t^{6}}{2^{t}}.$
 \end_inset
 
- and 
-\begin_inset Formula $2^{\sqrt{n}}=2^{2^{\frac{m}{2}}}$
-\end_inset
-
-.
- 
-\begin_inset Newline newline
-\end_inset
-
-For 
-\begin_inset Formula $c=1,m_{0}=10$
-\end_inset
-
- we get that for every 
-\begin_inset Formula $n>n_{0}$
-\end_inset
-
-, 
-\begin_inset Formula $3n+2\leq2^{\frac{n}{2}}\Rightarrow2^{3m+2}\leq2^{2^{\frac{m}{2}}}\left(2^{x}\text{ is a stricly increasing function}\right)\Rightarrow$
-\end_inset
-
- for 
-\begin_inset Formula $c=1$
-\end_inset
-
- and for every 
-\begin_inset Formula $n>n_{0}=2^{10},n^{3}+n^{2}+n+\log\left(n\right)\leq4n^{3}\leq2^{\sqrt{n}}.$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $\Rightarrow n^{3}+n^{2}+n+\log\left(n\right)\in O\left(2^{\sqrt{n}}\right)$
+ We will use the ratio test for sequences to calculate 
+\begin_inset Formula $\lim_{t\rightarrow\infty}a_{t}:\lim_{t\rightarrow\infty}\frac{a_{t+1}}{a_{t}}=\lim_{t\rightarrow\infty}\frac{\frac{4\left(t+1\right)^{6}}{2^{\left(t+1\right)}}}{\frac{4t^{6}}{2^{t}}}=\lim_{t\rightarrow\infty}\frac{4\left(t+1\right)^{6}\cdot2^{t}}{4t^{6}\cdot2^{\left(t+1\right)}}=\lim_{t\rightarrow\infty}\frac{\left(t+1\right)^{6}}{t^{6}\cdot2}=\lim_{t\rightarrow\infty}\left(\frac{t+1}{t}\right)^{6}\cdot\frac{1}{2}=1^{6}\cdot\frac{1}{2}=\frac{1}{2}<1\Rightarrow\lim_{t\rightarrow\infty}a_{t}=0\Rightarrow4t^{6}\in o\left(2^{t}\right)\Rightarrow4n^{3}\in o\left(2^{\sqrt{n}}\right)\Rightarrow f_{12}\in O\left(f_{3}\right).$
 \end_inset
 
 
@@ -499,7 +465,7 @@ Note that
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\left(\lim_{n\rightarrow\infty}2^{g\left(n\right)}=2^{\lim_{n\rightarrow\infty}g\left(n\right)}\right)$
+\begin_inset Formula $\left(\lim_{n\rightarrow\infty}2^{g\left(n\right)}=2^{\lim_{n\rightarrow\infty}g\left(n\right)}\text{ because \ensuremath{f\left(x\right)=2} is a continous function}\right)$
 \end_inset
 
 
@@ -616,7 +582,7 @@ Let's assume that
 \end_inset
 
  there exist 
-\begin_inset Formula $c_{1},n_{0}$
+\begin_inset Formula $c_{1}>0,n_{0}$
 \end_inset
 
  such that for every 
@@ -624,7 +590,7 @@ Let's assume that
 \end_inset
 
  Hence for 
-\begin_inset Formula $c_{2}=\frac{1}{c_{1}},n_{0}$
+\begin_inset Formula $c_{2}=\frac{1}{c_{1}}>0,n_{0}$
 \end_inset
 
  we get that for every 
@@ -655,39 +621,111 @@ Let
 \begin_inset Formula $a_{n_{1}},b_{n_{2}}>0.$
 \end_inset
 
- Also, 
+ Also we will notate 
 \begin_inset Formula $p_{1}(p_{2}(n))=\Theta(g(n)).$
 \end_inset
 
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Formula $p_{1}\left(p_{2}\left(n\right)\right)=\sum_{k=0}^{n_{1}}a_{k}\left(\sum_{j=0}^{n_{2}}b_{j}n^{j}\right)^{k}.$
+ We want to find 
+\begin_inset Formula $g\left(n\right)$
 \end_inset
 
- We can see that when substituting 
-\begin_inset Formula $p_{2}\left(n\right)$
+.
+ We have seen in class that if 
+\begin_inset Formula $p\left(n\right)$
+\end_inset
+
+ is a polynomial such that 
+\begin_inset Formula $deg\left(p\right)=i\text{,}$
+\end_inset
+
+then 
+\begin_inset Formula $p\left(n\right)\in\Theta\left(n^{i}\right)$
+\end_inset
+
+ (
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+That means that the largest degree that appears in the polynomial determines
+ its 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $\Theta$
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+So when substituting 
+\begin_inset Formula $n$
 \end_inset
 
  for 
-\begin_inset Formula $\sum_{k=0}^{n_{2}}b_{k}n^{k}$
+\begin_inset Formula $p_{2}\left(n\right)$
 \end_inset
 
-, the highest degree in the new polynomial will be 
+ in 
+\begin_inset Formula $p_{1}\left(n\right)$
+\end_inset
+
+ we get that 
+\begin_inset Formula $p_{1}\left(p_{2}\left(n\right)\right)=\sum_{k=0}^{n_{1}}a_{k}\left(\sum_{j=0}^{n_{2}}b_{j}n^{j}\right)^{k}.$
+\end_inset
+
+ The largest degree of the new polynomial is obtained when we raise 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+ to the highest power - 
+\begin_inset Formula $n_{1}$
+\end_inset
+
+, that is multiplying 
+\begin_inset Formula $b_{n_{2}}n^{n_{2}}$
+\end_inset
+
+ by itself 
+\begin_inset Formula $n_{1}$
+\end_inset
+
+ times.
+ So 
+\begin_inset Formula $p_{1}\left(p_{2}\left(n\right)\right)=\sum_{m=0}^{n_{1}n_{2}}c_{m}n^{m};c_{n_{1}n_{2}}>0,$
+\end_inset
+
+ and the largest degree will be 
+\begin_inset Formula $n_{1}\cdot n_{2}$
+\end_inset
+
+ and we conclude that 
+\begin_inset Formula $g\left(n\right)=n^{n_{1}\cdot n_{2}}.$
+\end_inset
+
+
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
-\begin_inset Formula $ $
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
 <features tabularvalignment="middle">
@@ -793,7 +831,7 @@ quad
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Theta\left(1\right)$
+\begin_inset Formula $\Theta\left(n\right)$
 \end_inset
 
 
@@ -933,10 +971,9 @@ return index
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-in the worst case value key isn't in array 'A', as a result the for loop
- in line (2) will iterate from 
+In the worst case value key is in the end of the array 'A', as a result
+ the for loop in line (2) will iterate from 
 \begin_inset Formula $i=1$
 \end_inset
 
@@ -944,16 +981,32 @@ in the worst case value key isn't in array 'A', as a result the for loop
 \begin_inset Formula $n-1$
 \end_inset
 
+ 
+\begin_inset Formula $\left(\text{as long as i\ensuremath{\leq}n-1}\right)$
+\end_inset
+
  performing operations in 
 \begin_inset Formula $\Theta\left(1\right)$
 \end_inset
 
- each iteration, therefore we get that the worst case time cost will be:
+ each iteration, line (3) will occur 
+\begin_inset Formula $n-1$
+\end_inset
+
+ times, and lines (4) and (5) will happen once 
+\begin_inset Formula $\left(\text{when A[n-1]==key}\right)$
+\end_inset
+
+, therefore we get that the worst case time cost will be:
 \begin_inset Newline newline
 \end_inset
 
 
-\begin_inset Formula $\sum_{i=1}^{n-1}1=n-1=\Theta\left(n\right)$
+\begin_inset Formula $\sum_{i=1}^{n}1+$
+\end_inset
+
+
+\begin_inset Formula $\sum_{i=1}^{n-1}1+2=n+n-1+2=2n+1=\Theta\left(n\right).$
 \end_inset
 
 
@@ -1047,7 +1100,7 @@ We need to prove:
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $\exists c<1,n_{0}:\forall n>n_{0}\text{ }5\cdot f\left(\frac{n}{2}\right)\leq c\cdot f\left(n\right).$
+\begin_inset Formula $\exists c<1\exists n_{0},\forall n>n_{0}:\text{ }5\cdot f\left(\frac{n}{2}\right)\leq c\cdot f\left(n\right).$
 \end_inset
 
 
@@ -1075,7 +1128,7 @@ For
 \end_inset
 
  and for 
-\begin_inset Formula $c_{1}=1,n_{0}=1$
+\begin_inset Formula $c_{1}=1,n_{0}=2$
 \end_inset
 
  we get that for every 
@@ -1107,11 +1160,11 @@ setcounter{enumi}{1}
 \end_inset
 
 For 
-\begin_inset Formula $c=1,n_{0}=1$
+\begin_inset Formula $c=\frac{5}{8},n_{0}=1$
 \end_inset
 
  we get that for every 
-\begin_inset Formula $n>n_{0}:5\cdot\left(\frac{n}{2}\right)^{3}\log\left(\frac{n}{2}\right)=\frac{5}{8}n^{3}\left(\log\left(n\right)-\log\left(2\right)\right)\leq1\cdot n^{3}\log\left(n\right)\iff\frac{5}{8}\left(\log\left(n\right)-1\right)\leq\log\left(n\right)\iff\frac{5}{8}\log\left(n\right)-\frac{5}{8}\leq\log\left(n\right).$
+\begin_inset Formula $n>n_{0}:5\cdot\left(\frac{n}{2}\right)^{3}\log\left(\frac{n}{2}\right)=\frac{5}{8}n^{3}\left(\log\left(n\right)-\log\left(2\right)\right)\leq\frac{5}{8}\cdot n^{3}\log\left(n\right)\iff\frac{5}{8}\left(\log\left(n\right)-1\right)\leq\frac{5}{8}\log\left(n\right)\iff\log\left(n\right)-1\leq\log\left(n\right).$
 \end_inset
 
 
@@ -1153,7 +1206,7 @@ if we develop the recurrence tree we can see that the
 \end_inset
 
  first levels are full adding 
-\begin_inset Formula $1+2+4+8+\dots+2^{\log_{\frac{1}{1-c}}n}=\Theta\left(n\right)$
+\begin_inset Formula $1+2+4+8+\dots+2^{\log_{\frac{1}{1-c}}n}\approx\Theta\left(n\right)$
 \end_inset
 
  hence 
@@ -1170,7 +1223,7 @@ if we develop the recurrence tree we can see that the
 \end_inset
 
  
-\begin_inset Formula $1+2+4\dots+2^{\log_{\frac{1}{c}}n}=\Theta\left(n\right)$
+\begin_inset Formula $1+2+4\dots+2^{\log_{\frac{1}{c}}n}\approx\Theta\left(n\right)$
 \end_inset
 
  therefore 
@@ -1654,12 +1707,50 @@ hence
 \end_inset
 
  and we can see that if we iterate the calls we get 
-\begin_inset Formula $T\left(n\right)=1\cdot\left(n-1\right)+1=n\Rightarrow T\left(n\right)\in\Theta\left(n\right).$
+\begin_inset Formula $T\left(n\right)=1\cdot\left(n-1\right)+1=n$
+\end_inset
+
+ we will prove that using induction:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+base:
+\begin_inset Formula $n=1\rightarrow T\left(1\right)=1=n$
 \end_inset
 
 
 \end_layout
 
+\begin_layout Enumerate
+step: we assume 
+\begin_inset Formula $T\left(n\right)=n$
+\end_inset
+
+ we will show that 
+\begin_inset Formula $T\left(n+1\right)=n+1:$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $T\left(n+1\right)=T\left(n\right)+1=n+1$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+hence we get that 
+\begin_inset Formula $T\left(n\right)\in\Theta\left(n\right).$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 similarly we can see that when 
 \begin_inset Formula $n=0,1$
@@ -1701,7 +1792,7 @@ similarly we can see that when
 
 \begin_inset Formula 
 \[
-T\left(n\right)\begin{cases}
+T\left(n\right)=\begin{cases}
 1 & n=0,1\\
 T\left(\frac{1}{3}n\right)+1 & n=3k\\
 T\left(\frac{1}{3}\left(n-1\right)\right)+2 & n=3k+1\\
@@ -1719,7 +1810,7 @@ We can see that when
 \begin_inset Formula $n$
 \end_inset
 
-is very big there is very little diffrence between the cases where 
+ is very big there is very little difference between the cases where 
 \begin_inset Formula $n=3k,n=3k+1,n=3k+2$
 \end_inset
 
@@ -1770,7 +1861,7 @@ when
 
 \begin_inset Formula 
 \[
-T\left(n\right)\begin{cases}
+T\left(n\right)=\begin{cases}
 1 & n=0,1\\
 T\left(\frac{1}{c}n\right)+1 & n=c\cdot k\\
 T\left(\frac{1}{c}\left(n-1\right)\right)+2 & n=c\cdot k+1\\
@@ -1790,16 +1881,16 @@ And when
 \begin_inset Formula $n$
 \end_inset
 
-is big enough the constant 
+ is big enough the constant 
 \begin_inset Formula $c$
 \end_inset
 
-is negligible and there is little difference between the cases, therefore
+ is negligible and there is little difference between the cases, therefore
  we estimate that 
 \begin_inset Formula $T\left(n\right)=T\left(\frac{1}{c}n\right)+1$
 \end_inset
 
- for simplicity, and using the same reasoning as in clause (c),
+ for convenience, and using the same reasoning as in clause (c),
 \begin_inset Newline newline
 \end_inset
 
@@ -1841,16 +1932,22 @@ However when
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-\begin_inset Formula $ $
-\end_inset
-
-
+Please note that, in both clauses we assume that the inputs are valid.
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
+Function fillIn
+\begin_inset Formula $\left(\text{A[1...n]}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Tabular
-<lyxtabular version="3" rows="10" columns="3">
+<lyxtabular version="3" rows="12" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
@@ -1869,12 +1966,44 @@ However when
 \begin_inset Text
 
 \begin_layout Plain Layout
-Create a boolean array B[1...n] of length N and initialize it with false.
+Create a boolean array B[1...n]
 \end_layout
 
 \end_inset
 </cell>
 <cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+for i=1 to B.length do:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1888,11 +2017,59 @@ Create a boolean array B[1...n] of length N and initialize it with false.
 </cell>
 </row>
 <row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $B[i]\leftarrow\text{false}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-2
+4
 \end_layout
 
 \end_inset
@@ -1924,7 +2101,7 @@ for i=1 to A.length do:
 \begin_inset Text
 
 \begin_layout Plain Layout
-3
+5
 \end_layout
 
 \end_inset
@@ -1958,7 +2135,7 @@ quad
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Theta\left(n\right)$
+\begin_inset Formula $\Theta\left(1\right)$
 \end_inset
 
 
@@ -1972,7 +2149,7 @@ quad
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+6
 \end_layout
 
 \end_inset
@@ -2007,7 +2184,7 @@ quad
 \end_inset
 
  
-\begin_inset Formula $B\left[A\left[i\right]\right]=\text{true}$
+\begin_inset Formula $B\left[A\left[i\right]\right]\leftarrow\text{true}$
 \end_inset
 
 
@@ -2019,7 +2196,7 @@ quad
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Theta\left(n\right)$
+\begin_inset Formula $\Theta\left(1\right)$
 \end_inset
 
 
@@ -2033,7 +2210,7 @@ quad
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+7
 \end_layout
 
 \end_inset
@@ -2069,7 +2246,7 @@ index
 \begin_inset Text
 
 \begin_layout Plain Layout
-6
+8
 \end_layout
 
 \end_inset
@@ -2101,7 +2278,7 @@ for i=1 to B.length do:
 \begin_inset Text
 
 \begin_layout Plain Layout
-7
+9
 \end_layout
 
 \end_inset
@@ -2135,7 +2312,7 @@ quad
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Theta\left(n\right)$
+\begin_inset Formula $\Theta\left(1\right)$
 \end_inset
 
 
@@ -2149,7 +2326,7 @@ quad
 \begin_inset Text
 
 \begin_layout Plain Layout
-8
+10
 \end_layout
 
 \end_inset
@@ -2210,7 +2387,7 @@ quad
 \begin_inset Text
 
 \begin_layout Plain Layout
-9
+11
 \end_layout
 
 \end_inset
@@ -2274,7 +2451,565 @@ quad
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Theta\left(n\right)$
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $A\left[\text{index}\right]\leftarrow i$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We create a boolean array of size n serving as an indicator array.
+ B[i]==true 
+\begin_inset Formula $\iff$
+\end_inset
+
+ i is in A.
+\end_layout
+
+\begin_layout Itemize
+We traverse through the first array, filling the boolean array accordingly.
+ Now using the indicator array we will iterate simultaneously over both
+ arrays 
+\begin_inset Formula $\left(\text{using different indices}\right)$
+\end_inset
+
+, substituting the -1's for the missing integers.
+ We use the inner while loop to find the next element we want to replace.
+\end_layout
+
+\begin_layout Itemize
+The first for loop, initializing the indicator array, takes 
+\begin_inset Formula $\Theta\left(n\right)+n\cdot\Theta\left(1\right)\in\Theta\left(n\right).$
+\end_inset
+
+ In the worst case 
+\begin_inset Formula $\left(\text{all elements of A are -1}\right)$
+\end_inset
+
+, filling the indicator array 
+\begin_inset Formula $\left(\text{the second loop}\right)$
+\end_inset
+
+, takes 
+\begin_inset Formula $\Theta\left(n\right)+2\cdot n\cdot\Theta\left(1\right)\in\Theta\left(n\right).$
+\end_inset
+
+ The final for loop, will fill in the -1's while iterating over both arrays,
+ performing operations in 
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+ in each iteration, hence this for loop total cost will be 
+\begin_inset Formula $\Theta\left(n\right)+n\cdot\Theta\left(1\right)+\Theta\left(n\right)+n\cdot\Theta\left(1\right)+n\cdot\Theta\left(1\right)\in\Theta\left(n\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Summed up the total cost of the function is 
+\begin_inset Formula $\Theta\left(n\right)+\Theta\left(n\right)+\Theta\left(n\right)+\Theta\left(1\right)\in\Theta\left(n\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Function kth
+\begin_inset Formula $\left(\text{A[1...n], B[1...n], k}\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="16" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+size
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+A.length
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+startA
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+1, startB
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+while k>1 do:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(\log\left(k\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ nextStartA
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+startA+k/2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ nextStartB
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+startB+k/2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ if 
+\begin_inset Formula $\left(\text{nextStartA<size \& \left(\text{startB>size || A[startA]<B[startB]}\right)}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ startA
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+nextStartA 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ else
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ startB
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+nextStartB 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
 \end_inset
 
 
@@ -2309,7 +3044,104 @@ quad
 
 \end_inset
 
- 
+ k
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+k-k/2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+if 
+\begin_inset Formula $\left(\text{startA<=size \& \left(\text{startB>size || A[startA]<B[startB]}\right)}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -2322,11 +3154,11 @@ quad
 
 \end_inset
 
- 
-\begin_inset Formula $A\left[\text{index}\right]=i$
+ ans
+\begin_inset Formula $\leftarrow$
 \end_inset
 
-
+A[startA]
 \end_layout
 
 \end_inset
@@ -2335,7 +3167,116 @@ quad
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Theta\left(n\right)$
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+else
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+quad
+\end_layout
+
+\end_inset
+
+ ans
+\begin_inset Formula $\leftarrow$
+\end_inset
+
+B[startB]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+return ans
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Theta\left(1\right)$
 \end_inset
 
 
@@ -2353,24 +3294,107 @@ quad
 
 \begin_deeper
 \begin_layout Itemize
-Line (1) takes 
-\begin_inset Formula $\Theta\left(n\right).$
+First we want to eliminate the smallest k-1 values.
+\end_layout
+
+\begin_layout Itemize
+We will use 3 variables.
+ StartA and StartB will represent the first relevant element in each arrays.
+ Meaning that the elements before StartA and StartB were eliminated.
+ k will represent how many elements we have to eliminate.
+ We will eliminate k-1 elements, and the next smallest element is the kth
+ element.
+\end_layout
+
+\begin_layout Itemize
+Each iteration we will compare the k/2th element of each array.
+ Let's say A[k/2]<B[k/2].
+ Thus we can conclude that all the elements up till A[k/2] are too small
+ and can not be the kth element, so in array A we will continue checking
+ from A[k/2+1] 
+\begin_inset Formula $\left(\text{while making sure we do not exceed from the array. if we do exceed, we will advance in the second array}\right)$
 \end_inset
 
- The for loop in line (2) also takes 
-\begin_inset Formula $\Theta\left(n\right).$
+.
+ Now we have k-k/2 more elements to eliminate.
+\end_layout
+
+\begin_layout Itemize
+We will stop when we reach k=1, and then we will choose the next smallest
+ value, which will be the kth value from the two arrays.
+\end_layout
+
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $k=k-\frac{k}{2}.$
 \end_inset
 
- The for loop and the while loop in line (6) take 
-\begin_inset Formula $\Theta\left(n\right)$
+ If k is even then 
+\begin_inset Formula $k-\frac{k}{2}=\frac{k}{2},$
 \end_inset
 
- each, and combined they take 
-\begin_inset Formula $2\Theta\left(n\right)\text{ which equals to }\Theta\left(n\right).$
+ otherwise 
+\begin_inset Formula $k-\frac{k}{2}=\frac{k}{2}+1$
 \end_inset
 
- Everything together is 
-\begin_inset Formula $\Theta\left(n\right).$
+ 
+\begin_inset Formula $\left(\text{because integer division in JAVA rounded down}\right)$
+\end_inset
+
+.
+ For large enough k's, the +1 for odd k's is negligible, so for convenience
+ we will treat 
+\begin_inset Formula $k-\frac{k}{2}$
+\end_inset
+
+ as 
+\begin_inset Formula $\frac{k}{2}.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+The while loop will iterate i times until 
+\begin_inset Formula $\frac{k}{2^{i}}=1\Rightarrow i=\log k$
+\end_inset
+
+.
+ In each iteration preforming operations of 
+\begin_inset Formula $\Theta\left(1\right)$
+\end_inset
+
+, hence the total cost of the whole loop will be 
+\begin_inset Formula $\Theta\left(\log\left(k\right)\right)+\log\left(k\right)\cdot\Theta\left(1\right)\in\Theta\left(\log\left(k\right)\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+After k==1, we have to find the next smallest element and return it.
+ This takes 
+\begin_inset Formula $\Theta\left(1\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Everything summed up is 
+\begin_inset Formula $\Theta\left(\log\left(k\right)\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In the worst case, 
+\begin_inset Formula $k=2n.$
+\end_inset
+
+ In that case the function will take 
+\begin_inset Formula $\log\left(2n\right)=\log\left(2\right)+\log\left(n\right)=1+\log\left(n\right)\in\Theta\left(\log\left(n\right)\right).$
 \end_inset
 
 
